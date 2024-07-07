@@ -46,8 +46,7 @@ alt = df.pop('alternatives')
 #r.__evikorRank__()
 
 w=[0.5, 0.5]
-p=[0.25, 0.25, 0.25, 0.25] 
-#r = evikor.EvikorRanking(df = df, dfAlt = alt, weights=w, parameters=p).__evikorRank__()
+p=[0.25, 0.25, 0.25, 0.25]
 r = evikor.EvikorRanking(df = df, dfAlt = alt, weights=w, parameters=p)
 r.__evikorRankFullInfo__()
 print('Rankability index:', r.rankabilityIndex)
