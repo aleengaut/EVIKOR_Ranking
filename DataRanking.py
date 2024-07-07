@@ -26,6 +26,11 @@ file=open('study3.csv','r')
 df = pd.read_csv(file)
 alt = df.pop('alternatives')
 
+'''
+PCA must be applied carefully. It should be applied when the \
+    rankability of the data is very low and if it is lower than \
+        the rankability of the PCs.
+'''
 #pca = PCA(n_components=2)
 #pca.fit(data.to_numpy())
 #print(pca.explained_variance_ratio_)
