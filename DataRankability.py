@@ -43,7 +43,7 @@ alt = df.pop('alternatives')
 #w=[0.5, 0.5]
 #p=[0.25, 0.25, 0.25, 0.25] 
 #r = evikor.EvikorRanking(df = df, dfAlt = alt, weights=w, parameters=p)
-#r.__evikorRankFullInfo__()
+#r.__evikorRank__()
 
 w=[0.5, 0.5]
 p=[0.25, 0.25, 0.25, 0.25] 
