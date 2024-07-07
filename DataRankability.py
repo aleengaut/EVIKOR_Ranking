@@ -33,13 +33,6 @@ alt = df.pop('alternatives')
 
 #df = pd.DataFrame(pca.fit_transform(data), columns=['pc1', 'pc2'])
 
-#dr_1 = rankability.DataRankable(df = df, dfalt = alt)
-#dr_1.__rankabilityIndex__()
-#dr_1.__sumDomEffVectorAllCriteria__()
-#dr_1.__dominanceLevelVector__()
-#print('Rankability index:', dr_1.rankabilityIndex)
-#print('Data:', dr_1.df)
-
 #w=[0.5, 0.5]
 #p=[0.25, 0.25, 0.25, 0.25] 
 #r = evikor.EvikorRanking(df = df, dfAlt = alt, weights=w, parameters=p)
