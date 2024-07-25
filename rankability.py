@@ -20,6 +20,11 @@ class DataRankable():
         analyze dominance and efficiency, increasing numerical order of the 
         criterion results in greater dominance, that is, the higher the value 
         of the criterion the better.
+
+     OBS: Each criterion can be a benefit or a cost. However, to specifically 
+        analyze dominance and efficiency, increasing numerical order of the 
+        criterion results in greater dominance, that is, the higher the value 
+        of the criterion the better (benefit maximization).
     '''
     
     def __init__(self, df = None, dfalt = None):
