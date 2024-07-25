@@ -14,7 +14,8 @@ class DataRankable():
     proposed by Alexandre and Amit.
     
     requirements : numpy
-    input: alternative-criteria dataframe WITHOUT alternative column name
+    input: alternative-criteria dataframe WITHOUT alternative column
+           alternative column
 
      OBS: Each criterion can be a benefit or a cost. However, to specifically 
         analyze dominance and efficiency, increasing numerical order of the 
