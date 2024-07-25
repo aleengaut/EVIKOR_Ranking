@@ -74,7 +74,7 @@ class EvikorRanking(DataRankable):
     proposed by Alexandre and Amit.
     
     requirements : numpy
-    input: alternative-criteria dataframe
+    input: alternative-criteria dataframe WITHOUT alternative column
             alternative column
             weights array
             parameters array
