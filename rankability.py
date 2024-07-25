@@ -15,11 +15,6 @@ class DataRankable():
     
     requirements : numpy
     input: alternative-criteria dataframe WITHOUT alternative column name
-        
-    OBS: Each criterion can be a benefit or a cost. However, to specifically 
-        analyze dominance and efficiency, increasing numerical order of the 
-        criterion results in greater dominance, that is, the higher the value 
-        of the criterion the better.
 
      OBS: Each criterion can be a benefit or a cost. However, to specifically 
         analyze dominance and efficiency, increasing numerical order of the 
