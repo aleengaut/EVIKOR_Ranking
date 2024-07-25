@@ -79,7 +79,7 @@ class EvikorRanking(DataRankable):
     OBS: Each criterion can be a benefit or a cost. However, to specifically 
         analyze dominance and efficiency, increasing numerical order of the 
         criterion results in greater dominance, that is, the higher the value 
-        of the criterion the better.
+        of the criterion the better (benefit maximization).
     '''
     
     def __init__(self, df = None, dfAlt = None, weights = None , parameters = None):
