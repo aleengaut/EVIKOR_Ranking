@@ -48,10 +48,9 @@ def domEffRank2Generator(vec):
     			if p == 2:
     				rank.append(i)
     				p = 1
-    				
     			i = i + 2
     			
-    	if odd == 0 and freq > 0:
+    	if odd == 0 and freq != 0:
     		for f in range(freq):
     			if p == 1:
     				rank.append(i+1)
@@ -59,9 +58,9 @@ def domEffRank2Generator(vec):
     			if p == 2:
     				rank.append(i)
     				p = 1
-    
     			i = i + 2
-    			rank.append(i)
+    		rank.append(i)
+            i = i + 1
     			
     	if odd == 0 and freq == 0:
     		rank.append(i) 
