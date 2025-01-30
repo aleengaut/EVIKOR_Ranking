@@ -1,6 +1,8 @@
-# EVIKOR_Ranking
-EVIKOR ranking method
+# Data Rankability Index
+Method for measuring data rankability by dominance analysis in Python
 
-Python module for measuring data rankability by dominance analysis and to generate rankings respecting dominance according to criteria-data.
+This is the official repository for the paper: 
 
-This is the official repository for the paper: Extended VIKOR (EVIKOR): a new proposal for ranking based on non-dominance and rankability
+Requirements for using the code:
+  1-Numpy package
+  2-pandas package
