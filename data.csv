@@ -1,7 +1,7 @@
-"criterion1","criterion2","criterion3"
-5,6,7
-4,5,6
-3,4,5
-2,3,4
-1,2,3
-0,1,2
+"alternatives","criterion1","criterion2"
+"alt 1",5,5
+"alt 2",4,4
+"alt 3",3,3
+"alt 4",2,2
+"alt 5",1,1
+"alt 6",0,0
