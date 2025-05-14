@@ -51,8 +51,14 @@ class DataRankable():
         for a in range(self.numberOfAlternatives):
             for b in range(self.numberOfAlternatives):
                 test = 0
+                flag1=True # flag dominant alt by at least one criterion.
+                flag2=True # flag first time data[a,c] < data[b,c]
                 for c in range(self.numberOfCriteria):
-                    if data[a,c] > data[b,c]: test=test+1 
+                    if data[a,c] > data[b,c]: test=test+1
+                    if data[a,c] < data[b,c] and flag2: 
+                        flag1=False
+                        flag2=False
+                if flag1 and test>0: test=self.numberOfCriteria
                 test = test // self.numberOfCriteria
                 e[a] = e[a] + test
         
@@ -160,19 +166,26 @@ class DataRankable():
     
     def __dominanceYMatrixik__(self, each_crtrion):
         
+        dj=np.zeros(self.numberOfAlternatives)
         Y=np.zeros((self.numberOfAlternatives, self.numberOfAlternatives), dtype=float)
-        i,k=0,0
+        i,j=0,0
+        sd=0
         for ai in each_crtrion:
-            for ak in each_crtrion:
-                if ai>ak: 
-                    Y[i][k]=Y[i][k]
-                if ai<ak: 
-                    Y[i][k]=1
+            for aj in each_crtrion:
+                if ai>aj: 
+                    dj[i]=dj[i]
+                if ai<aj: 
+                    dj[i]=dj[i]+1
+                    Y[i][j]=1
                 i=i+1
+            
+            for k in range(j):
+                sd = sd + Y[k][j]
+            
             i=0
-            k=k+1
+            j=j+1
         
-        return Y
+        return Y, dj, sd
     
     def __DMatrix__(self):
         '''
@@ -184,10 +197,12 @@ class DataRankable():
                         .__sumDomEffVectorAllCriteria__()
             
         '''
+        sdallm = 0
         D=np.zeros((self.numberOfAlternatives, self.numberOfAlternatives), dtype=float)
         for each_crtrion in self.data.keys():
-        	D = D + self.__dominanceYMatrixik__(self.data[each_crtrion])
-        
+            D = D + self.__dominanceYMatrixik__(self.data[each_crtrion])[0]
+            sdallm = sdallm + self.__dominanceYMatrixik__(self.data[each_crtrion])[2]
+            
         self.D = D
         
-        return D
+        return D, sdallm
