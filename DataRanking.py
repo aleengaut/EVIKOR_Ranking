@@ -40,13 +40,22 @@ print(pca.singular_values_)
 
 datapca = pd.DataFrame(pca.fit_transform(data), columns=['pc1', 'pc2'])
 
-weights=[0.5, 0.5]
+weights=[1/7,1/7,1/7,1/7,1/7,1/7,1/7]
 parameters=[0.25, 0.25, 0.25, 0.25] 
-r = evikor.EvikorRanking(data = datapca, alt = alt, w=weights, p=parameters)
+r = evikor.EvikorRanking(data = data, alt = alt, w=weights, p=parameters)
 r.__ranking__()
 
 print('rankability: ', r.rho)
 print('Data(0_1 reescaled criteria):')
+r.dataOutput = r.dataOutput.sort_values('d', ascending=False)
 print(r.dataOutput)
+print("pairwise matrix(ordering as original data):", r.__DMatrix__()[1])
+print(r.__DMatrix__()[0])
+
+dataresult = pd.DataFrame(data, index=r.dataOutput.index)
+r1 = evikor.EvikorRanking(data = dataresult, alt = alt, w=weights, p=parameters)
+r1.__ranking__()
+print("pairwise matrix result (ordering by d):", r1.__DMatrix__()[1])
+print(r1.__DMatrix__()[0])
 
 
